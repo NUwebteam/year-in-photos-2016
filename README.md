@@ -10,6 +10,7 @@ front-end frameworks included.
 Install with `npm install`.
 
 -   [Bootstrap](http://getbootstrap.com)
+-   [jQuery](https://jquery.com/)
 
 ## Installation
 
