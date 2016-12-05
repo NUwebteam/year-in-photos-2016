@@ -184,15 +184,19 @@ module.exports = function(grunt) {
             },
             grunt: {
               files: ['gruntfile.js'],
-              tasks: ['default']
+              tasks: ['sass', 'autoprefixer', 'cssmin', 'concat', 'minified', 'sync', 'htmlmin']
             },
             css: {
-              files: ['assets/styles/index.scss'],
-              tasks: ['sass', 'autoprefixer', 'cssmin', 'concat', 'minified', 'sync', 'htmlmin', 'image:dynamic']
+              files: ['assets/styles/*.scss'],
+              tasks: ['sass', 'autoprefixer', 'cssmin', 'sync', 'htmlmin']
             },
             scripts: {
               files: ['assets/scripts/*'],
-              tasks: ['concat', 'minified']
+              tasks: ['concat', 'minified', 'htmlmin']
+            },
+            html: {
+              files: ['index.html'],
+              tasks: ['htmlmin']
             }
         },
     });
