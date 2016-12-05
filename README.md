@@ -18,7 +18,12 @@ Install with `npm install`.
 1.  Unzip and rename the template directory.
 1.  Empty [`README.md`](README.md) and fill with your own content.
 1.  Move into the new project and `git init`.
-1.  Install dependencies with `npm install`.
+1.  Ensure [Node.js](https://nodejs.org/en/) is installed.
+>  Once the download and installation is complete, you'll have `Node` and `NPM`
+1.  Also be sure to have [Grunt](http://gruntjs.com/) installed. If not run
+`npm install -g grunt-cli` in terminal.
+1.  Finally, ensure you're in the correct directory for the project and
+install dependencies with `npm install`.
 
 ## Structure
 
