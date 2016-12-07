@@ -90,7 +90,7 @@ module.exports = function(grunt) {
               },
             },
             files: {
-              'test/assets/scripts/index.min.js': ['assets/scripts/*']
+              'test/assets/scripts/index.min.js': ['assets/scripts/*.js']
             },
           },
         },
@@ -101,11 +101,11 @@ module.exports = function(grunt) {
               'test/assets/scripts/index.min.js'
             ],
             dest: [
-              'assets/scripts/'
+              './'
             ]
           },
           options : {
-            sourcemap: true,
+            sourcemap: false,
             allinone: false
           }
         },
@@ -156,11 +156,11 @@ module.exports = function(grunt) {
                     dest: 'dist/assets/owl-carousel/'
                   },
                   {
-                    cwd: 'assets/scripts/',
+                    cwd: '',
                     src: [
                         'index.min.js',
                     ],
-                    dest: 'dist/assets/scripts/'
+                    dest: 'dist/'
                   },
                   {
                     cwd: 'assets/styles/',
@@ -200,23 +200,23 @@ module.exports = function(grunt) {
             options: {
               livereload: true,
             },
-            grunt: {
-              files: ['gruntfile.js'],
-              tasks: ['']
-            },
+            // grunt: {
+            //   files: ['gruntfile.js'],
+            //   tasks: ['']
+            // },
             css: {
               files: ['assets/styles/*.scss'],
               tasks: ['sass', 'autoprefixer', 'cssmin']
             },
             scripts: {
-              files: ['assets/scripts/*'],
+              files: ['assets/scripts/*.js'],
               tasks: ['concat', 'minified']
             },
         },
     });
     //- REGISTER ALL OUR GRUNT TASKS
     grunt.task.run('notify_hooks');
-    grunt.registerTask('default', ['sass', 'autoprefixer', 'cssmin', 'concat', 'minified', 'sync', 'htmlmin', 'image:dynamic']);
+    grunt.registerTask('default', ['sass', 'autoprefixer', 'cssmin', 'concat', 'minified', 'htmlmin', 'sync', 'image:dynamic']);
     grunt.registerTask('app_change', ['concat:app', 'uglify:app', 'uglify:main']);
     grunt.registerTask('concat_change', ['uglify:app']);
     grunt.registerTask('css_prefixed', ['autoprefixer']);
