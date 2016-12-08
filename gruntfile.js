@@ -176,6 +176,13 @@ module.exports = function(grunt) {
                     ],
                     dest: 'dist/'
                   },
+                  {
+                    cwd: 'assets/styles/',
+                    src: [
+                        'normalize.css',
+                    ],
+                    dest: 'dist/assets/styles/'
+                  },
                 ],
                 verbose: true
             }
