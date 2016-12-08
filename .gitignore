@@ -1,8 +1,10 @@
 tmp
-dist/
-assets/styles/*.css
-assets/styles/*.css.*
-assets/scripts/*.min.js
+# dist/
+# assets/styles/*.css
+# assets/styles/*.css.*
+# assets/scripts/*.min.js
+
+# Fonts and images are automatically ignored from git
 *.woff2
 *.woff
 *.svg
