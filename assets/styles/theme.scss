@@ -27,7 +27,7 @@ body {
 .full-image-source {
   width: 100%;
   min-height: 50vw;
-  max-height: 1200px;
+  // max-height: 1200px;
   // max-height:
 }
 
@@ -47,29 +47,35 @@ body {
 .async-wrapper {
   float: left;
   width: 50%;
-  min-height: 80vw;
+  min-height: 60vw;
 }
 
 .two-image-source {
   width: 50%;
   float: left;
-  min-height: 40vw;
+  min-height: 60vw;
+}
+
+.two-image-horz-source {
+  width: 50%;
+  float: left;
+  min-height: 25vw;
 }
 
 .two-x-two-image-source {
   width: 50%;
   float: left;
-  min-height: 33.33vw;
+  min-height: 30vw;
 }
 
 .async-lrg-vert-image-source {
   width: 100%;
-  min-height: 80vw;
+  min-height: 60vw;
 }
 
 .async-sm-horz-image-source {
   width: 100%;
-  height: calc(80vw / 3);
+  height: calc(60vw / 3);
 }
 
 .async-horz-wrapper {
@@ -92,5 +98,5 @@ body {
 .tri-image-source {
   width: 33.33%;
   float: left;
-  min-height: 33vw;
+  min-height: 40vw;
 }

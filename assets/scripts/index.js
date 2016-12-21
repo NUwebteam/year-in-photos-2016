@@ -21,6 +21,16 @@ $(document).ready(function() {
   var section_18 = [];
   var section_19 = [];
   var section_20 = [];
+  var section_21 = [];
+  var section_22 = [];
+  var section_23 = [];
+  var section_24 = [];
+  var section_25 = [];
+  var section_26 = [];
+  var section_27 = [];
+  var section_28 = [];
+  var section_29 = [];
+  var section_30 = [];
   var individual = [];
 
   $.get('https://docs.google.com/spreadsheets/d/1KiYKHmCr-K0SDY1QImf5caP5_cXw-EZUYC68O_Rnon8/pub?output=csv', function (data) {
@@ -51,6 +61,15 @@ $(document).ready(function() {
 
       return ret;
     };
+
+    var twoImageHorzTemplate = function(image) {
+      var ret = '';
+
+      ret += '<div class="two-image-horz-source" style="background:url('+image.image_url+') no-repeat center center;background-size:cover;">';
+      ret += '</div>';
+
+      return ret;
+    }
 
     var twoByTwoTemplate = function(image) {
       var ret = '';
@@ -115,7 +134,20 @@ $(document).ready(function() {
       }
       html += '</div>';
       html += '<div class="image-caption">';
-      html += '<p>'+images[0].caption+' '+images[0].photographer+'</i></p>';
+      html += '<p>'+images[0].caption+' <i>'+images[0].photographer+'</i></p>';
+      html += '</div>';
+      html += '</div>';
+    };
+
+    var renderTwoImagesHorz = function(images) {
+      html += '<div class="two-image-container clearfix">';
+      html += '<div class="two-image-wrapper clearfix">';
+      for (var i = 0; i < images.length; i++) {
+        html += twoImageHorzTemplate(images[i]);
+      }
+      html += '</div>';
+      html += '<div class="image-caption">';
+      html += '<p>'+images[0].caption+' <i>'+images[0].photographer+'</i></p>';
       html += '</div>';
       html += '</div>';
     };
@@ -128,7 +160,7 @@ $(document).ready(function() {
       }
       html += '</div>';
       html += '<div class="image-caption">';
-      html += '<p>'+images[0].caption+' '+images[0].photographer+'</i></p>';
+      html += '<p>'+images[0].caption+' <i>'+images[0].photographer+'</i></p>';
       html += '</div>';
       html += '</div>';
     };
@@ -140,7 +172,7 @@ $(document).ready(function() {
       html += asyncVertTemplate(images);
       html += '</div>';
       html += '<div class="image-caption">';
-      html += '<p>'+images[0].caption+' '+images[0].photographer+'</i></p>';
+      html += '<p>'+images[0].caption+' <i>'+images[0].photographer+'</i></p>';
       html += '</div>';
       html += '</div>';
     };
@@ -151,7 +183,7 @@ $(document).ready(function() {
       html += asyncHorzTemplate(images);
       html += '</div>';
       html += '<div class="image-caption">';
-      html += '<p>'+images[0].caption+' '+images[0].photographer+'</i></p>';
+      html += '<p>'+images[0].caption+' <i>'+images[0].photographer+'</i></p>';
       html += '</div>';
       html += '</div>';
     };
@@ -164,7 +196,7 @@ $(document).ready(function() {
       }
       html += '</div>';
       html += '<div class="image-caption">';
-      html += '<p>'+images[0].caption+' '+images[0].photographer+'</i></p>';
+      html += '<p>'+images[0].caption+' <i>'+images[0].photographer+'</i></p>';
       html += '</div>';
       html += '</div>';
     };
@@ -210,32 +242,82 @@ $(document).ready(function() {
          section_19.push(images[i]);
       } else if (images[i].section === 'section-20') {
          section_20.push(images[i]);
+      } else if (images[i].section === 'section-21') {
+         section_21.push(images[i]);
+      } else if (images[i].section === 'section-22') {
+         section_22.push(images[i]);
+      } else if (images[i].section === 'section-23') {
+         section_23.push(images[i]);
+      } else if (images[i].section === 'section-24') {
+         section_24.push(images[i]);
+      } else if (images[i].section === 'section-25') {
+         section_25.push(images[i]);
+      } else if (images[i].section === 'section-26') {
+         section_26.push(images[i]);
+      } else if (images[i].section === 'section-27') {
+         section_27.push(images[i]);
+      } else if (images[i].section === 'section-28') {
+         section_28.push(images[i]);
+      } else if (images[i].section === 'section-29') {
+         section_29.push(images[i]);
+      } else if (images[i].section === 'section-30') {
+         section_30.push(images[i]);
       } else if (images[i].section === 'individual') {
          individual.push(images[i]);
       }
     }
-      // console.log(section_1);
-    // console.log(section_4);
-    // renderFullImages(section_1);
-    // renderTwoImages(section_2);
-    // renderTwoByTwoImages(section_3);
-    // renderAsyncVertImages(section_4);
-    // renderAsyncHorzImages(section_5);
+    renderFullImage(individual[3]);
     renderTriImages(section_1);
-    renderFullImage(individual[0]);
-    renderTwoImages(section_2);
-    renderFullImage(individual[1]);
+    renderFullImage(individual[10]);
+    renderTwoImagesHorz(section_28);
     renderFullImage(individual[2]);
     renderTwoByTwoImages(section_3);
-    renderFullImage(individual[3]);
     renderFullImage(individual[4]);
+    renderTwoByTwoImages(section_23);
     renderFullImage(individual[5]);
+    renderTwoImagesHorz(section_4);
     renderFullImage(individual[6]);
-    renderTwoImages(section_4);
-    renderTwoImages(section_5);
-    renderTriImages(section_6);
-
-
+    renderTwoImagesHorz(section_26);
+    renderFullImage(individual[8]);
+    renderTwoImagesHorz(section_5);
+    renderFullImage(individual[7]);
+    renderTwoImagesHorz(section_6);
+    renderFullImage(individual[9]);
+    renderTwoByTwoImages(section_7);
+    renderFullImage(individual[11]);
+    renderTwoByTwoImages(section_8);
+    renderFullImage(individual[17]);
+    renderTwoImagesHorz(section_9);
+    renderFullImage(individual[12]);
+    renderTwoImagesHorz(section_2);
+    renderFullImage(individual[19]);
+    renderTwoImagesHorz(section_12);
+    renderFullImage(individual[13]);
+    renderTwoImagesHorz(section_13);
+    renderFullImage(individual[14]);
+    renderTwoByTwoImages(section_10);
+    renderFullImage(individual[15]);
+    renderTwoImagesHorz(section_14);
+    renderFullImage(individual[16]);
+    renderTwoByTwoImages(section_11);
+    renderFullImage(individual[18]);
+    renderTwoImagesHorz(section_19);
+    renderFullImage(individual[20]);
+    renderTwoImagesHorz(section_15);
+    renderFullImage(individual[21]);
+    renderTriImages(section_17);
+    renderFullImage(individual[22]);
+    renderTwoImagesHorz(section_16);
+    renderFullImage(individual[1]);
+    renderTwoImagesHorz(section_18);
+    renderAsyncVertImages(section_20);
+    renderFullImage(individual[0]);
+    renderTwoByTwoImages(section_21);
+    renderFullImage(individual[23]);
+    renderTwoByTwoImages(section_22);
+    renderTwoImagesHorz(section_24);
+    renderTwoByTwoImages(section_25);
+    renderTwoImages(section_27);
 
     $('#content-template').html(html);
   });
