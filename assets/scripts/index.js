@@ -15,6 +15,12 @@ $(document).ready(function() {
   var section_12 = [];
   var section_13 = [];
   var section_14 = [];
+  var section_15 = [];
+  var section_16 = [];
+  var section_17 = [];
+  var section_18 = [];
+  var section_19 = [];
+  var section_20 = [];
   var individual = [];
 
   $.get('https://docs.google.com/spreadsheets/d/1KiYKHmCr-K0SDY1QImf5caP5_cXw-EZUYC68O_Rnon8/pub?output=csv', function (data) {
@@ -30,7 +36,7 @@ $(document).ready(function() {
       ret += '<div class="full-image-source" style="background:url('+image.image_url+') no-repeat center center;background-size:cover;">';
       ret += '</div>';
       ret += '<div class="image-caption">';
-      ret += '<p>'+image.caption+'</p>';
+      ret += '<p>'+image.caption+' '+image.photographer+'</i></p>';
       ret += '</div>';
       ret += '</div>';
 
@@ -88,12 +94,17 @@ $(document).ready(function() {
       return ret;
     };
 
-    var renderFullImages = function(images) {
-      for (var i = 0; i < images.length; i++) {
-        html += fullImageTemplate(images[i]);
-      }
+    var triTemplate = function(image) {
+      var ret = '';
 
-      // individual.shift();
+      ret += '<div class="tri-image-source" style="background:url('+image.image_url+') no-repeat center center;background-size:cover;">';
+      ret += '</div>';
+
+      return ret;
+    };
+
+    var renderFullImage = function(image) {
+      html += fullImageTemplate(image);
     };
 
     var renderTwoImages = function(images) {
@@ -104,7 +115,7 @@ $(document).ready(function() {
       }
       html += '</div>';
       html += '<div class="image-caption">';
-      html += '<p>'+images[0].caption+'</p>';
+      html += '<p>'+images[0].caption+' '+images[0].photographer+'</i></p>';
       html += '</div>';
       html += '</div>';
     };
@@ -117,7 +128,7 @@ $(document).ready(function() {
       }
       html += '</div>';
       html += '<div class="image-caption">';
-      html += '<p>'+images[0].caption+'</p>';
+      html += '<p>'+images[0].caption+' '+images[0].photographer+'</i></p>';
       html += '</div>';
       html += '</div>';
     };
@@ -129,7 +140,7 @@ $(document).ready(function() {
       html += asyncVertTemplate(images);
       html += '</div>';
       html += '<div class="image-caption">';
-      html += '<p>'+images[0].caption+'</p>';
+      html += '<p>'+images[0].caption+' '+images[0].photographer+'</i></p>';
       html += '</div>';
       html += '</div>';
     };
@@ -140,7 +151,20 @@ $(document).ready(function() {
       html += asyncHorzTemplate(images);
       html += '</div>';
       html += '<div class="image-caption">';
-      html += '<p>'+images[0].caption+'</p>';
+      html += '<p>'+images[0].caption+' '+images[0].photographer+'</i></p>';
+      html += '</div>';
+      html += '</div>';
+    };
+
+    var renderTriImages = function(images) {
+      html += '<div class="tri-container clearfix">';
+      html += '<div class="tri-image-wrapper clearfix">';
+      for (var i = 0; i < images.length; i++) {
+        html += triTemplate(images[i]);
+      }
+      html += '</div>';
+      html += '<div class="image-caption">';
+      html += '<p>'+images[0].caption+' '+images[0].photographer+'</i></p>';
       html += '</div>';
       html += '</div>';
     };
@@ -174,17 +198,43 @@ $(document).ready(function() {
          section_13.push(images[i]);
       } else if (images[i].section === 'section-14') {
          section_14.push(images[i]);
-      } else if (images[i].section === '') {
+      } else if (images[i].section === 'section-15') {
+         section_15.push(images[i]);
+      } else if (images[i].section === 'section-16') {
+         section_16.push(images[i]);
+      } else if (images[i].section === 'section-17') {
+         section_17.push(images[i]);
+      } else if (images[i].section === 'section-18') {
+         section_18.push(images[i]);
+      } else if (images[i].section === 'section-19') {
+         section_19.push(images[i]);
+      } else if (images[i].section === 'section-20') {
+         section_20.push(images[i]);
+      } else if (images[i].section === 'individual') {
          individual.push(images[i]);
       }
     }
       // console.log(section_1);
-    console.log(section_4);
-    renderFullImages(section_1);
+    // console.log(section_4);
+    // renderFullImages(section_1);
+    // renderTwoImages(section_2);
+    // renderTwoByTwoImages(section_3);
+    // renderAsyncVertImages(section_4);
+    // renderAsyncHorzImages(section_5);
+    renderTriImages(section_1);
+    renderFullImage(individual[0]);
     renderTwoImages(section_2);
+    renderFullImage(individual[1]);
+    renderFullImage(individual[2]);
     renderTwoByTwoImages(section_3);
-    renderAsyncVertImages(section_4);
-    renderAsyncHorzImages(section_5);
+    renderFullImage(individual[3]);
+    renderFullImage(individual[4]);
+    renderFullImage(individual[5]);
+    renderFullImage(individual[6]);
+    renderTwoImages(section_4);
+    renderTwoImages(section_5);
+    renderTriImages(section_6);
+
 
 
     $('#content-template').html(html);
