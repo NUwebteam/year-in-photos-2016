@@ -41,7 +41,6 @@ body {
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
           box-sizing: border-box;
-  max-width: 1200px;
   margin: 0px auto;
   background-color: #ccc;
 }
@@ -169,14 +168,34 @@ body {
   .two-image-horz-source {
     min-height: 40vw;
   }
+
+  .pf-content {
+    width: 100%;
+  }
+
+  .heading-content {
+    padding: 100px 50px;
+  }
+
+  .full-image-source {
+    min-height: 60vw;
+  }
 }
 @media screen and (max-width: 767px) {
   body {
     font-size: 12px;
   }
 
+  .full-image-source {
+    min-height: 65vw;
+  }
+
   .two-image-horz-source {
     min-height: 40vw;
+  }
+
+  .two-x-two-image-source {
+    min-height: 33vw;
   }
 
   .heading-content {

@@ -5,6 +5,17 @@
   .two-image-horz-source {
     min-height: 40vw;
   }
+  .pf-content {
+    width: 100%;
+  }
+
+  .heading-content {
+    padding: 100px 50px;
+  }
+
+  .full-image-source {
+    min-height: 60vw;
+  }
 }
 
 
@@ -12,8 +23,17 @@
   body {
     font-size: 12px;
   }
+
+  .full-image-source {
+    min-height: 65vw;
+  }
+
   .two-image-horz-source {
     min-height: 40vw;
+  }
+
+  .two-x-two-image-source {
+    min-height: 33vw;
   }
 
   .heading-content {
